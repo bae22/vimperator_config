@@ -1,0 +1,15 @@
+"3.4 (created: 2012/04/02 20:07:29)
+
+"" Set gui options
+set gui=noaddons,nobookmarks,nomenu,navigation,tabs
+
+"" Custom Key mappings
+nmap <C-A-d> :pinboard<CR>
+nmap <C-A-s> :pinboardsearch 
+
+"" Set up custom commands
+command! -nargs=* pinboard :open javascript:q=location.href;if(document.getSelection){d=document.getSelection();}else{d='';};p=document.title;void(open('https://pinboard.in/add? url='+encodeURIComponent(q)+'&description='+encodeURIComponent(d)+'&title='+encodeURIComponent(p),'Pinboard','toolbar=no,width=700,height=350'));
+source! /home/bae22/.vimperatorrc.local
+command! -nargs=* pinboardsearch :tabopen https://pinboard.in/search/?query=<args>&mine=Search+Mine
+
+" vim: set ft=vimperator:
