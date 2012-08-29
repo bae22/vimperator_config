@@ -12,4 +12,10 @@ command! -nargs=* pinboard :open javascript:q=location.href;if(document.getSelec
 source! /home/bae22/.vimperatorrc.local
 command! -nargs=* pinboardsearch :tabopen https://pinboard.in/search/?query=<args>&mine=Search+Mine
 
+"" Set up sites for ignorekeys
+ignorekeys add mail\.google\.com
+ignorekeys add www\.google\.com\/calendar
+ignorekeys add www\.evernote\.com
+ignorekeys add pinboard\.in\/add
+
 " vim: set ft=vimperator:
